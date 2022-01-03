@@ -175,13 +175,13 @@ if ( ! class_exists( 'TwentyTwenty_Customize' ) ) {
 					'default'           => array(
 						'content'       => array(
 							'text'      => '#000000',
-							'accent'    => '#cd2653',
+							'accent'    => '#0ea5e9',
 							'secondary' => '#6d6d6d',
 							'borders'   => '#dcd7ca',
 						),
 						'header-footer' => array(
 							'text'      => '#000000',
-							'accent'    => '#cd2653',
+							'accent'    => '#0ea5e9',
 							'secondary' => '#6d6d6d',
 							'borders'   => '#dcd7ca',
 						),
@@ -247,7 +247,7 @@ if ( ! class_exists( 'TwentyTwenty_Customize' ) ) {
 				array(
 					'type'    => 'radio',
 					'section' => 'colors',
-					'label'   => __( 'Primary Color', 'twentytwenty' ),
+					'label'   => __( 'Primary Color - Dark Mode', 'twentytwenty' ),
 					'choices' => array(
 						'default' => __( 'Default', 'twentytwenty' ),
 						'custom'  => __( 'Custom', 'twentytwenty' ),
@@ -280,16 +280,16 @@ if ( ! class_exists( 'TwentyTwenty_Customize' ) ) {
 				array(
 					'default'           => array(
 						'content'       => array(
-							'text'      => '#000000',
-							'accent'    => '#cd2653',
-							'secondary' => '#6d6d6d',
-							'borders'   => '#dcd7ca',
+							'text'      => '#ffffff',
+							'accent'    => '#84cc16',
+							'secondary' => '#aaaaaa',
+							'borders'   => '#333333',
 						),
 						'header-footer' => array(
-							'text'      => '#000000',
-							'accent'    => '#cd2653',
-							'secondary' => '#6d6d6d',
-							'borders'   => '#dcd7ca',
+							'text'      => '#ffffff',
+							'accent'    => '#84cc16',
+							'secondary' => '#aaaaaa',
+							'borders'   => '#333333',
 						),
 					),
 					'type'              => 'theme_mod',
