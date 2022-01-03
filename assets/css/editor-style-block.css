@@ -840,14 +840,13 @@ hr.wp-block-separator.is-style-dots::before {
 .editor-styles-wrapper .wp-block-button__link,
 .editor-styles-wrapper .wp-block-file__button {
 	background: #0ea5e9;
-	border-radius: 0;
+	border-radius: 1rem;
 	color: #fff;
 	font-size: 15px;
 	font-weight: 600;
 	letter-spacing: 0.0333em;
 	line-height: 1.25;
 	padding: 1.1em 1.44em;
-	text-transform: uppercase;
 }
 
 .editor-styles-wrapper .wp-block-button .wp-block-button__link.mce-content-body {

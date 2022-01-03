@@ -747,7 +747,7 @@ input[type="submit"] {
 	-moz-appearance: none;
 	background: #0ea5e9;
 	border: none;
-	border-radius: 0;
+	border-radius: 1rem;
 	color: #fff;
 	cursor: pointer;
 	display: inline-block;
@@ -760,7 +760,6 @@ input[type="submit"] {
 	padding: 1.1em 1.44em;
 	text-align: center;
 	text-decoration: none;
-	text-transform: uppercase;
 	transition: opacity 0.15s linear;
 }
 
@@ -6244,4 +6243,10 @@ a.to-the-top > * {
 	.wp-block-pullquote.is-style-solid-color.alignright::before {
 		top: 0;
 	}
+}
+
+
+/* JETPACK FIXES */
+#jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post {
+	width: 100%;
 }

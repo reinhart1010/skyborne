@@ -473,7 +473,7 @@ body#tinymce.wp-editor.content input[type="submit"] {
 	-moz-appearance: none;
 	background: #0ea5e9;
 	border: none;
-	border-radius: 0;
+	border-radius: 1rem;
 	color: #fff;
 	cursor: pointer;
 	display: inline-block;
@@ -485,7 +485,6 @@ body#tinymce.wp-editor.content input[type="submit"] {
 	padding: 1.1em 1.44em;
 	text-align: center;
 	text-decoration: none;
-	text-transform: uppercase;
 }
 
 body#tinymce.wp-editor.content button:focus,

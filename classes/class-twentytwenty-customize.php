@@ -83,11 +83,39 @@ if ( ! class_exists( 'TwentyTwenty_Customize' ) ) {
 				)
 			);
 
+			$wp_customize->add_setting(
+				'background_color_dm',
+				array(
+					'default'           => '#000000',
+					'sanitize_callback' => 'sanitize_hex_color',
+					'transport'         => 'postMessage',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Color_Control(
+					$wp_customize,
+					'background_color_dm',
+					array(
+						'label'   => __( 'Background Color - Dark Mode', 'twentytwenty' ),
+						'section' => 'colors',
+					)
+				)
+			);
+
 			// Header & Footer Background Color.
 			$wp_customize->add_setting(
 				'header_footer_background_color',
 				array(
 					'default'           => '#ffffff',
+					'sanitize_callback' => 'sanitize_hex_color',
+					'transport'         => 'postMessage',
+				)
+			);
+			$wp_customize->add_setting(
+				'header_footer_background_color_dm',
+				array(
+					'default'           => '#000000',
 					'sanitize_callback' => 'sanitize_hex_color',
 					'transport'         => 'postMessage',
 				)
@@ -103,10 +131,29 @@ if ( ! class_exists( 'TwentyTwenty_Customize' ) ) {
 					)
 				)
 			);
+			$wp_customize->add_control(
+				new WP_Customize_Color_Control(
+					$wp_customize,
+					'header_footer_background_color_dm',
+					array(
+						'label'   => __( 'Header &amp; Footer Background Color - Dark Mode', 'twentytwenty' ),
+						'section' => 'colors',
+					)
+				)
+			);
 
 			// Enable picking an accent color.
 			$wp_customize->add_setting(
 				'accent_hue_active',
+				array(
+					'capability'        => 'edit_theme_options',
+					'sanitize_callback' => array( __CLASS__, 'sanitize_select' ),
+					'transport'         => 'postMessage',
+					'default'           => 'default',
+				)
+			);
+			$wp_customize->add_setting(
+				'accent_hue_active_dm',
 				array(
 					'capability'        => 'edit_theme_options',
 					'sanitize_callback' => array( __CLASS__, 'sanitize_select' ),
@@ -127,6 +174,18 @@ if ( ! class_exists( 'TwentyTwenty_Customize' ) ) {
 					),
 				)
 			);
+			$wp_customize->add_control(
+				'accent_hue_active_dm',
+				array(
+					'type'    => 'radio',
+					'section' => 'colors',
+					'label'   => __( 'Primary Color - Dark Mode', 'twentytwenty' ),
+					'choices' => array(
+						'default' => __( 'Default', 'twentytwenty' ),
+						'custom'  => __( 'Custom', 'twentytwenty' ),
+					),
+				)
+			);
 
 			/**
 			 * Implementation for the accent color.
@@ -141,7 +200,16 @@ if ( ! class_exists( 'TwentyTwenty_Customize' ) ) {
 			$wp_customize->add_setting(
 				'accent_hue',
 				array(
-					'default'           => 344,
+					'default'           => 199,
+					'type'              => 'theme_mod',
+					'sanitize_callback' => 'absint',
+					'transport'         => 'postMessage',
+				)
+			);
+			$wp_customize->add_setting(
+				'accent_hue_dm',
+				array(
+					'default'           => 84,
 					'type'              => 'theme_mod',
 					'sanitize_callback' => 'absint',
 					'transport'         => 'postMessage',
@@ -151,6 +219,28 @@ if ( ! class_exists( 'TwentyTwenty_Customize' ) ) {
 			// Add setting to hold colors derived from the accent hue.
 			$wp_customize->add_setting(
 				'accent_accessible_colors',
+				array(
+					'default'           => array(
+						'content'       => array(
+							'text'      => '#000000',
+							'accent'    => '#cd2653',
+							'secondary' => '#6d6d6d',
+							'borders'   => '#dcd7ca',
+						),
+						'header-footer' => array(
+							'text'      => '#000000',
+							'accent'    => '#cd2653',
+							'secondary' => '#6d6d6d',
+							'borders'   => '#dcd7ca',
+						),
+					),
+					'type'              => 'theme_mod',
+					'transport'         => 'postMessage',
+					'sanitize_callback' => array( __CLASS__, 'sanitize_accent_accessible_colors' ),
+				)
+			);
+			$wp_customize->add_setting(
+				'accent_accessible_colors_dm',
 				array(
 					'default'           => array(
 						'content'       => array(
@@ -188,9 +278,25 @@ if ( ! class_exists( 'TwentyTwenty_Customize' ) ) {
 					)
 				)
 			);
+			$wp_customize->add_control(
+				new WP_Customize_Color_Control(
+					$wp_customize,
+					'accent_hue_dm',
+					array(
+						'section'         => 'colors',
+						'settings'        => 'accent_hue_dm',
+						'description'     => __( 'Apply a custom color for links, buttons, featured images in dark mode.', 'twentytwenty' ),
+						'mode'            => 'hue',
+						'active_callback' => function() use ( $wp_customize ) {
+							return ( 'custom' === $wp_customize->get_setting( 'accent_hue_active_dm' )->value() );
+						},
+					)
+				)
+			);
 
 			// Update background color with postMessage, so inline CSS output is updated as well.
 			$wp_customize->get_setting( 'background_color' )->transport = 'postMessage';
+			$wp_customize->get_setting( 'background_color_dm' )->transport = 'postMessage';
 
 			/**
 			 * Theme Options
