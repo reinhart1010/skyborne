@@ -23,9 +23,7 @@
 		<script src="<? printf( get_stylesheet_directory_uri() . '/assets/js/darkmode-js.min.js' ); ?>"></script>
 		<script>
 			function addDarkmodeWidget() {
-				new Darkmode().showWidget({
-					label: '🌓'
-				});
+				new Darkmode().showWidget();
 			}
 			window.addEventListener('load', addDarkmodeWidget);
 		</script>
@@ -34,7 +32,7 @@
 
 	</head>
 
-	<body <?php body_class( array('darkmode-ignore') ); ?>>
+	<body <?php body_class(); ?>>
 
 		<?php
 		wp_body_open();

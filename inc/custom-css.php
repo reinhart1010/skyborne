@@ -31,7 +31,7 @@ if ( ! function_exists( 'twentytwenty_generate_css' ) ) {
 			return;
 		}
 
-		$return = sprintf( '%s { %s: %s; }', $selector, $style, $prefix . $value . $suffix );
+		$return = sprintf( '%s { %s: %s; isolation: isolate; }', $selector, $style, $prefix . $value . $suffix );
 
 		if ( $echo ) {
 
@@ -115,13 +115,13 @@ if ( ! function_exists( 'twentytwenty_get_customizer_css' ) ) {
 
 		/* And do the same thing for dark mode */
 		// Get variables.
-		$body_dm              = sanitize_hex_color( twentytwenty_get_color_for_area( 'content', 'text' ) );
+		$body_dm              = sanitize_hex_color( twentytwenty_get_color_for_area( 'content', 'text_dm' ) );
 		$body_default_dm      = '#ffffff';
-		$secondary_dm         = sanitize_hex_color( twentytwenty_get_color_for_area( 'content', 'secondary' ) );
+		$secondary_dm         = sanitize_hex_color( twentytwenty_get_color_for_area( 'content', 'secondary_dm' ) );
 		$secondary_default_dm = '#aaaaaa';
-		$borders_dm           = sanitize_hex_color( twentytwenty_get_color_for_area( 'content', 'borders' ) );
+		$borders_dm           = sanitize_hex_color( twentytwenty_get_color_for_area( 'content', 'borders_dm' ) );
 		$borders_default_dm   = '#333333';
-		$accent_dm            = sanitize_hex_color( twentytwenty_get_color_for_area( 'content', 'accent' ) );
+		$accent_dm            = sanitize_hex_color( twentytwenty_get_color_for_area( 'content', 'accent_dm' ) );
 		$accent_default_dm    = '#84cc16';
 
 		// Header.

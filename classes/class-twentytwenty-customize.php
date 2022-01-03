@@ -210,6 +210,7 @@ if ( ! class_exists( 'TwentyTwenty_Customize' ) ) {
 			);
 
 			/* And to the same for dark mode */
+			// Header & Footer Background Color.
 			$wp_customize->add_setting(
 				'header_footer_background_color_dm',
 				array(
@@ -241,6 +242,19 @@ if ( ! class_exists( 'TwentyTwenty_Customize' ) ) {
 				)
 			);
 
+			$wp_customize->add_control(
+				'accent_hue_active_dm',
+				array(
+					'type'    => 'radio',
+					'section' => 'colors',
+					'label'   => __( 'Primary Color', 'twentytwenty' ),
+					'choices' => array(
+						'default' => __( 'Default', 'twentytwenty' ),
+						'custom'  => __( 'Custom', 'twentytwenty' ),
+					),
+				)
+			);
+
 			/**
 			 * Implementation for the accent color.
 			 * This is different to all other color options because of the accessibility enhancements.
@@ -251,19 +265,6 @@ if ( ! class_exists( 'TwentyTwenty_Customize' ) ) {
 			 */
 
 			// Add the setting for the hue colorpicker.
-			$wp_customize->add_control(
-				'accent_hue_active_dm',
-				array(
-					'type'    => 'radio',
-					'section' => 'colors',
-					'label'   => __( 'Primary Color - Dark Mode', 'twentytwenty' ),
-					'choices' => array(
-						'default' => __( 'Default', 'twentytwenty' ),
-						'custom'  => __( 'Custom', 'twentytwenty' ),
-					),
-				)
-			);
-
 			$wp_customize->add_setting(
 				'accent_hue_dm',
 				array(
