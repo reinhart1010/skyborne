@@ -112,14 +112,6 @@ if ( ! class_exists( 'TwentyTwenty_Customize' ) ) {
 					'transport'         => 'postMessage',
 				)
 			);
-			$wp_customize->add_setting(
-				'header_footer_background_color_dm',
-				array(
-					'default'           => '#000000',
-					'sanitize_callback' => 'sanitize_hex_color',
-					'transport'         => 'postMessage',
-				)
-			);
 
 			$wp_customize->add_control(
 				new WP_Customize_Color_Control(
@@ -127,16 +119,6 @@ if ( ! class_exists( 'TwentyTwenty_Customize' ) ) {
 					'header_footer_background_color',
 					array(
 						'label'   => __( 'Header &amp; Footer Background Color', 'twentytwenty' ),
-						'section' => 'colors',
-					)
-				)
-			);
-			$wp_customize->add_control(
-				new WP_Customize_Color_Control(
-					$wp_customize,
-					'header_footer_background_color_dm',
-					array(
-						'label'   => __( 'Header &amp; Footer Background Color - Dark Mode', 'twentytwenty' ),
 						'section' => 'colors',
 					)
 				)
@@ -152,15 +134,6 @@ if ( ! class_exists( 'TwentyTwenty_Customize' ) ) {
 					'default'           => 'default',
 				)
 			);
-			$wp_customize->add_setting(
-				'accent_hue_active_dm',
-				array(
-					'capability'        => 'edit_theme_options',
-					'sanitize_callback' => array( __CLASS__, 'sanitize_select' ),
-					'transport'         => 'postMessage',
-					'default'           => 'default',
-				)
-			);
 
 			$wp_customize->add_control(
 				'accent_hue_active',
@@ -168,18 +141,6 @@ if ( ! class_exists( 'TwentyTwenty_Customize' ) ) {
 					'type'    => 'radio',
 					'section' => 'colors',
 					'label'   => __( 'Primary Color', 'twentytwenty' ),
-					'choices' => array(
-						'default' => __( 'Default', 'twentytwenty' ),
-						'custom'  => __( 'Custom', 'twentytwenty' ),
-					),
-				)
-			);
-			$wp_customize->add_control(
-				'accent_hue_active_dm',
-				array(
-					'type'    => 'radio',
-					'section' => 'colors',
-					'label'   => __( 'Primary Color - Dark Mode', 'twentytwenty' ),
 					'choices' => array(
 						'default' => __( 'Default', 'twentytwenty' ),
 						'custom'  => __( 'Custom', 'twentytwenty' ),
@@ -206,41 +167,10 @@ if ( ! class_exists( 'TwentyTwenty_Customize' ) ) {
 					'transport'         => 'postMessage',
 				)
 			);
-			$wp_customize->add_setting(
-				'accent_hue_dm',
-				array(
-					'default'           => 84,
-					'type'              => 'theme_mod',
-					'sanitize_callback' => 'absint',
-					'transport'         => 'postMessage',
-				)
-			);
 
 			// Add setting to hold colors derived from the accent hue.
 			$wp_customize->add_setting(
 				'accent_accessible_colors',
-				array(
-					'default'           => array(
-						'content'       => array(
-							'text'      => '#000000',
-							'accent'    => '#cd2653',
-							'secondary' => '#6d6d6d',
-							'borders'   => '#dcd7ca',
-						),
-						'header-footer' => array(
-							'text'      => '#000000',
-							'accent'    => '#cd2653',
-							'secondary' => '#6d6d6d',
-							'borders'   => '#dcd7ca',
-						),
-					),
-					'type'              => 'theme_mod',
-					'transport'         => 'postMessage',
-					'sanitize_callback' => array( __CLASS__, 'sanitize_accent_accessible_colors' ),
-				)
-			);
-			$wp_customize->add_setting(
-				'accent_accessible_colors_dm',
 				array(
 					'default'           => array(
 						'content'       => array(
@@ -278,6 +208,96 @@ if ( ! class_exists( 'TwentyTwenty_Customize' ) ) {
 					)
 				)
 			);
+
+			/* And to the same for dark mode */
+			$wp_customize->add_setting(
+				'header_footer_background_color_dm',
+				array(
+					'default'           => '#000000',
+					'sanitize_callback' => 'sanitize_hex_color',
+					'transport'         => 'postMessage',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Color_Control(
+					$wp_customize,
+					'header_footer_background_color_dm',
+					array(
+						'label'   => __( 'Header &amp; Footer Background Color - Dark Mode', 'twentytwenty' ),
+						'section' => 'colors',
+					)
+				)
+			);
+
+			// Enable picking an accent color.
+			$wp_customize->add_setting(
+				'accent_hue_active_dm',
+				array(
+					'capability'        => 'edit_theme_options',
+					'sanitize_callback' => array( __CLASS__, 'sanitize_select' ),
+					'transport'         => 'postMessage',
+					'default'           => 'default',
+				)
+			);
+
+			/**
+			 * Implementation for the accent color.
+			 * This is different to all other color options because of the accessibility enhancements.
+			 * The control is a hue-only colorpicker, and there is a separate setting that holds values
+			 * for other colors calculated based on the selected hue and various background-colors on the page.
+			 *
+			 * @since 1.0.0
+			 */
+
+			// Add the setting for the hue colorpicker.
+			$wp_customize->add_control(
+				'accent_hue_active_dm',
+				array(
+					'type'    => 'radio',
+					'section' => 'colors',
+					'label'   => __( 'Primary Color - Dark Mode', 'twentytwenty' ),
+					'choices' => array(
+						'default' => __( 'Default', 'twentytwenty' ),
+						'custom'  => __( 'Custom', 'twentytwenty' ),
+					),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'accent_hue_dm',
+				array(
+					'default'           => 84,
+					'type'              => 'theme_mod',
+					'sanitize_callback' => 'absint',
+					'transport'         => 'postMessage',
+				)
+			);
+
+			$wp_customize->add_setting(
+				'accent_accessible_colors_dm',
+				array(
+					'default'           => array(
+						'content'       => array(
+							'text'      => '#000000',
+							'accent'    => '#cd2653',
+							'secondary' => '#6d6d6d',
+							'borders'   => '#dcd7ca',
+						),
+						'header-footer' => array(
+							'text'      => '#000000',
+							'accent'    => '#cd2653',
+							'secondary' => '#6d6d6d',
+							'borders'   => '#dcd7ca',
+						),
+					),
+					'type'              => 'theme_mod',
+					'transport'         => 'postMessage',
+					'sanitize_callback' => array( __CLASS__, 'sanitize_accent_accessible_colors' ),
+				)
+			);
+
+			// Add the hue-only colorpicker for the accent color.
 			$wp_customize->add_control(
 				new WP_Customize_Color_Control(
 					$wp_customize,
