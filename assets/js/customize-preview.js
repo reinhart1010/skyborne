@@ -105,6 +105,21 @@
 		} );
 	} );
 
+	// Add listener for the "header_footer_background_color_dm" control.
+	api( 'header_footer_background_color_dm', function( value ) {
+		value.bind( function( to ) {
+			// Add background color to header and footer wrappers.
+			$( '.darkmode--enabled body:not(.overlay-header)#site-header, .darkmode--enabled #site-footer' ).css( 'background-color', to );
+
+			// Change body classes if this is the same background-color as the content background.
+			if ( to.toLowerCase() === api( 'background_color_dm' ).get().toLowerCase() ) {
+				$( 'body' ).addClass( 'reduced-spacing' );
+			} else {
+				$( 'body' ).removeClass( 'reduced-spacing' );
+			}
+		} );
+	} );
+
 	// Add listener for the "background_color" control.
 	api( 'background_color', function( value ) {
 		value.bind( function( to ) {
@@ -117,8 +132,33 @@
 		} );
 	} );
 
+	// Add listener for the "background_color_dm" control.
+	api( 'background_color_dm', function( value ) {
+		value.bind( function( to ) {
+			// Change body classes if this is the same background-color as the header/footer background.
+			if ( to.toLowerCase() === api( 'header_footer_background_color_dm' ).get().toLowerCase() ) {
+				$( 'body' ).addClass( 'reduced-spacing' );
+			} else {
+				$( 'body' ).removeClass( 'reduced-spacing' );
+			}
+		} );
+	} );
+
 	// Add listener for the accent color.
 	api( 'accent_hue', function( value ) {
+		value.bind( function() {
+			// Generate the styles.
+			// Add a small delay to be sure the accessible colors were generated.
+			setTimeout( function() {
+				Object.keys( twentyTwentyBgColors ).forEach( function( context ) {
+					twentyTwentyGenerateColorA11yPreviewStyles( context );
+				} );
+			}, 50 );
+		} );
+	} );
+
+	// Add listener for the accent color.
+	api( 'accent_hue_dm', function( value ) {
 		value.bind( function() {
 			// Generate the styles.
 			// Add a small delay to be sure the accessible colors were generated.
