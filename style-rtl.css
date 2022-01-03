@@ -736,7 +736,7 @@ input[type="search"]::-webkit-search-results-decoration {
 	display: none;
 }
 
-button,
+button:not(.darkmode-toggle),
 .button,
 .faux-button,
 .wp-block-button__link,
