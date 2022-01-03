@@ -18,7 +18,7 @@ if ( (bool) get_the_author_meta( 'description' ) ) : ?>
 			printf(
 				/* translators: %s: Author name */
 				__( 'By %s', 'twentytwenty' ),
-				esc_html( get_the_author() )
+				get_the_author()
 			);
 			?>
 		</h2>
