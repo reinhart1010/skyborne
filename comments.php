@@ -34,7 +34,7 @@ if ( $comments ) {
 				_e( 'Leave a comment', 'twentytwenty' );
 			} elseif ( '1' === $comments_number ) {
 				/* translators: %s: post title */
-				printf( _x( 'One reply on &ldquo;%s&rdquo;', 'comments title', 'twentytwenty' ), esc_html( get_the_title() ) );
+				printf( _x( 'One reply on &ldquo;%s&rdquo;', 'comments title', 'twentytwenty' ), get_the_title() );
 			} else {
 				echo sprintf(
 					/* translators: 1: number of comments, 2: post title */
