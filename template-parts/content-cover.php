@@ -2,9 +2,9 @@
 /**
  * Displays the content when the cover template is used.
  *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since 1.0.0
+ * @package reinhart1010
+ * @subpackage Skyborne
+ * @since 1.1.0
  */
 
 ?>

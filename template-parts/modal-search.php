@@ -2,9 +2,9 @@
 /**
  * Displays the search icon and modal
  *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since 1.0.0
+ * @package reinhart1010
+ * @subpackage Skyborne
+ * @since 1.1.0
  */
 
 ?>
