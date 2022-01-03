@@ -20,7 +20,7 @@
 
 		<link rel="profile" href="https://gmpg.org/xfn/11">
 
-		<script src="<? printf( get_theme_root_uri() . '/assets/js/darkmode-js.min.js' ); ?>"></script>
+		<script src="<? printf( get_stylesheet_directory() . '/assets/js/darkmode-js.min.js' ); ?>"></script>
 		<script>
 			function addDarkmodeWidget() {
 				new Darkmode().showWidget({
