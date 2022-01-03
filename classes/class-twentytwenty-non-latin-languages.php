@@ -4,9 +4,9 @@
  *
  * Handle non-latin language styles.
  *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since 1.0.0
+ * @package reinhart1010
+ * @subpackage Skyborne
+ * @since 1.1.0
  */
 
 if ( ! class_exists( 'TwentyTwenty_Non_Latin_Languages' ) ) {
@@ -19,7 +19,7 @@ if ( ! class_exists( 'TwentyTwenty_Non_Latin_Languages' ) ) {
 		 * Get custom CSS.
 		 *
 		 * Return CSS for non-latin language, if available, or null
-		 * 
+		 *
 		 * @param string $type Whether to return CSS for the "front-end", "block-editor" or "classic-editor".
 		 *
 		 * @return void

@@ -6,9 +6,9 @@
  *
  * Based on a solution in WP Rig.
  *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since 1.0.0
+ * @package reinhart1010
+ * @subpackage Skyborne
+ * @since 1.1.0
  */
 
 if ( ! class_exists( 'TwentyTwenty_Script_Loader' ) ) {
