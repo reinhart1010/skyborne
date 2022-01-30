@@ -9,6 +9,9 @@
  * @since 1.0.0
  */
 
+wp_enqueue_script("css-vars-ponyfill", "https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2");
+wp_enqueue_script("css-vars-ponyfill", get_stylesheet_directory_uri() . "/js/ponyfill-activate.js");
+
 /**
  * Get font face styles.
  * Called by functions twentytwentytwo_styles() and twentytwentytwo_editor_styles().
