@@ -1,6 +1,9 @@
 {
   "version": 2,
   "settings": {
+    "border": {
+      "radius": "0.75rem"
+    },
     "color": {
       "palette": [
         {
