@@ -1,1 +1,3 @@
-cssVars();
+window.onload = function(){
+  cssVars();
+}
