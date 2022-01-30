@@ -1,0 +1,107 @@
+{
+  "version": 2,
+  "settings": {
+    "color": {
+      "palette": [
+        {
+          "slug": "foreground",
+          "color": "#3F67C6",
+          "name": "Foreground"
+        },
+        {
+          "slug": "background",
+          "color": "#FCF5ED",
+          "name": "Background"
+        },
+        {
+          "slug": "primary",
+          "color": "#385BAD",
+          "name": "Primary"
+        },
+        {
+          "slug": "secondary",
+          "color": "#F7EBDD",
+          "name": "Secondary"
+        },
+        {
+          "slug": "tertiary",
+          "color": "#ffffff",
+          "name": "Tertiary"
+        }
+      ]
+    },
+    "layout": {
+      "wideSize": "1060px"
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "fontFamily": "\"Segoe UI Variable Display\", -apple-system, BlinkMacSystemFont, Inter, \"Segoe UI\", Cantarell, Roboto, \"Open Sans\", \"Noto Sans\", Ubuntu, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "name": "System Font (Display)",
+          "slug": "system-display"
+        },
+        {
+          "fontFamily": "\"Segoe UI Variable Small\", -apple-system, BlinkMacSystemFont, Inter, \"Segoe UI\", Cantarell, Roboto, \"Open Sans\", \"Noto Sans\", Ubuntu, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "name": "System Font (Small)",
+          "slug": "system-small"
+        },
+        {
+          "fontFamily": "\"Segoe UI Variable Text\", -apple-system, BlinkMacSystemFont, Inter, \"Segoe UI\", Cantarell, Roboto, \"Open Sans\", \"Noto Sans\", Ubuntu, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "name": "System Font (Text)",
+          "slug": "system-text"
+        }
+      ]
+    }
+  },
+  "styles": {
+    "blocks": {
+      "core/post-title": {
+        "typography": {
+          "fontWeight": "700",
+          "fontFamily": "var(--wp--preset--font-family--system-display)"
+        }
+      }
+    },
+    "elements": {
+      "h1": {
+        "typography": {
+          "fontWeight": "700",
+          "fontFamily": "var(--wp--preset--font-family--system-display)"
+        }
+      },
+      "h2": {
+        "typography": {
+          "fontWeight": "700",
+          "fontFamily": "var(--wp--preset--font-family--system-display)"
+        }
+      },
+      "h3": {
+        "typography": {
+          "fontWeight": "700",
+          "fontFamily": "var(--wp--preset--font-family--system-display)"
+        }
+      },
+      "h4": {
+        "typography": {
+          "fontWeight": "700",
+          "fontFamily": "var(--wp--preset--font-family--system-display)"
+        }
+      },
+      "h5": {
+        "typography": {
+          "fontWeight": "700",
+          "fontFamily": "var(--wp--preset--font-family--system-display)"
+        }
+      },
+      "h6": {
+        "typography": {
+          "fontWeight": "700",
+          "fontFamily": "var(--wp--preset--font-family--system-display)"
+        }
+      }
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--system-text)"
+    }
+  }
+}
