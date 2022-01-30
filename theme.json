@@ -16,7 +16,7 @@
         },
         {
           "slug": "primary",
-          "color": "#0ea5e9",
+          "color": "#38bdf8",
           "name": "Primary"
         },
         {
@@ -62,7 +62,7 @@
           "fontFamily": "var(--wp--preset--font-family--system-display)"
         },
         "color": {
-          "text": "#0ea5e9"
+          "text": "#38bdf8"
         }
       }
     },
@@ -73,7 +73,7 @@
           "fontFamily": "var(--wp--preset--font-family--system-display)"
         },
         "color": {
-          "text": "#0ea5e9"
+          "text": "#38bdf8"
         }
       },
       "h2": {
@@ -82,7 +82,7 @@
           "fontFamily": "var(--wp--preset--font-family--system-display)"
         },
         "color": {
-          "text": "#0ea5e9"
+          "text": "#38bdf8"
         }
       },
       "h3": {
@@ -91,7 +91,7 @@
           "fontFamily": "var(--wp--preset--font-family--system-display)"
         },
         "color": {
-          "text": "#0ea5e9"
+          "text": "#38bdf8"
         }
       },
       "h4": {
@@ -100,7 +100,7 @@
           "fontFamily": "var(--wp--preset--font-family--system-display)"
         },
         "color": {
-          "text": "#0ea5e9"
+          "text": "#38bdf8"
         }
       },
       "h5": {
@@ -109,7 +109,7 @@
           "fontFamily": "var(--wp--preset--font-family--system-display)"
         },
         "color": {
-          "text": "#0ea5e9"
+          "text": "#38bdf8"
         }
       },
       "h6": {
@@ -118,7 +118,7 @@
           "fontFamily": "var(--wp--preset--font-family--system-display)"
         },
         "color": {
-          "text": "#0ea5e9"
+          "text": "#38bdf8"
         }
       }
     },
