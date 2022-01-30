@@ -9,7 +9,7 @@
  * @since 1.0.0
  */
 
-wp_enqueue_script("css-vars-ponyfill", "https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2");
+wp_enqueue_script("css-vars-ponyfill", "https://unpkg.com/css-vars-ponyfill@2.4.7/dist/css-vars-ponyfill.min.js");
 wp_enqueue_script("css-vars-ponyfill", get_stylesheet_directory_uri() . "/js/ponyfill-activate.js");
 
 /**
