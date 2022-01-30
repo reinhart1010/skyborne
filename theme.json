@@ -1,19 +1,17 @@
 {
+  "$schema": "http://schemas.wp.org/trunk/theme.json",
   "version": 2,
   "settings": {
-    "border": {
-      "radius": "0.75rem"
-    },
     "color": {
       "palette": [
         {
           "slug": "foreground",
-          "color": "#000000",
+          "color": "#ffffff",
           "name": "Foreground"
         },
         {
           "slug": "background",
-          "color": "#ECEFF4",
+          "color": "#242933",
           "name": "Background"
         },
         {
@@ -62,6 +60,9 @@
         "typography": {
           "fontWeight": "700",
           "fontFamily": "var(--wp--preset--font-family--system-display)"
+        },
+        "color": {
+          "text": "#0ea5e9"
         }
       }
     },
@@ -70,36 +71,54 @@
         "typography": {
           "fontWeight": "700",
           "fontFamily": "var(--wp--preset--font-family--system-display)"
+        },
+        "color": {
+          "text": "#0ea5e9"
         }
       },
       "h2": {
         "typography": {
           "fontWeight": "700",
           "fontFamily": "var(--wp--preset--font-family--system-display)"
+        },
+        "color": {
+          "text": "#0ea5e9"
         }
       },
       "h3": {
         "typography": {
           "fontWeight": "700",
           "fontFamily": "var(--wp--preset--font-family--system-display)"
+        },
+        "color": {
+          "text": "#0ea5e9"
         }
       },
       "h4": {
         "typography": {
           "fontWeight": "700",
           "fontFamily": "var(--wp--preset--font-family--system-display)"
+        },
+        "color": {
+          "text": "#0ea5e9"
         }
       },
       "h5": {
         "typography": {
           "fontWeight": "700",
           "fontFamily": "var(--wp--preset--font-family--system-display)"
+        },
+        "color": {
+          "text": "#0ea5e9"
         }
       },
       "h6": {
         "typography": {
           "fontWeight": "700",
           "fontFamily": "var(--wp--preset--font-family--system-display)"
+        },
+        "color": {
+          "text": "#0ea5e9"
         }
       }
     },
