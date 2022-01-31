@@ -20,6 +20,18 @@ wp_enqueue_script("css-vars-ponyfill", get_stylesheet_directory_uri() . "/js/pol
  */
 function twentytwentytwo_get_font_face_styles() {
 	return "
+  /**
+   * Prevent the Segoe UI Emoji font to be rendered incorrectly when the text's `font-weight`
+   * attribute is set to `700` or higher.
+   * 
+   * See https://stackoverflow.com/questions/70923715/ - I wrote it myself!
+   */
+  @font-face {
+    font-family: 'Segoe UI Emoji';
+    font-weight: 700;
+    src: local('Segoe UI Emoji');
+  }
+
   /* cyrillic-ext */
   @font-face {
     font-family: 'Roboto';
